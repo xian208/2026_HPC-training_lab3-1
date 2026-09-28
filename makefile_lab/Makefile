@@ -1,16 +1,18 @@
 # Compiler and flags
-# TODO 1 
+# TODO 1
 CC = ____
 
-# TODO 2
-CFLAGS = -fopenmp ____          # hint: optimization flag
+# TODO 2 (hint: add an optimization flag)
+CFLAGS = -fopenmp ____
 
 # Targets
 TARGET = final
 
-# TODO 3
+# TODO 3 (hint: list all object files)
 OBJS = ____
 
+# TODO 4 (hint: install prefix, e.g. $(HOME)/lab3-1; do not put a comment on the same line)
+PREFIX = ____
 
 # Default target
 $(TARGET) : $(OBJS)
@@ -23,15 +25,15 @@ main.o : main.c vector.h matrix.h
 vector.o : vector.c vector.h
 	$(CC) $(CFLAGS) -c vector.c
 
-# TODO 4
-matrix.o : matrix.c ____ # hint: you need the header file
+# TODO 5 (hint: matrix.c includes a header file)
+matrix.o : matrix.c ____
 	$(CC) $(CFLAGS) -c ____
 
-# TODO 5
+# TODO 6 (hint: copy the binary to $(PREFIX)/bin)
 # Install target
 install : $(TARGET)
 	mkdir -p ____
-	cp $(TARGET) ____       # hint: where should the binary go? 
+	cp $(TARGET) ____
 
 # Clean up
 .PHONY : clean install
